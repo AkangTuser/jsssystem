@@ -108,16 +108,23 @@ class Group extends ResourceController
      */
     public function update($id = null)
     {
-        // Menggunakan Query Builder
+        // Untuk mengaktifkan user
         $data = [
             'email' => $this->request->getVar('email'),
             'username' => $this->request->getVar('username'),
             'full_name' => $this->request->getVar('full_name'),
             'active' => $this->request->getVar('active'),
         ];
-
         $this->builder->set($data);
         $this->builder->update($data, ['id' => $id]);
+
+
+        // Untuk merubah group user
+        $userId = $this->request->getVar('id');
+        $groupId = $this->request->getVar('name');
+
+        $this->groupModel->removeUserFromAllGroups(intval($userId));
+        $this->groupModel->addUserToGroup(intval($userId), intval($groupId));
 
         if ('success') {
             return redirect()->to(site_url('group'))->with('success', 'Data berhasil diubah');

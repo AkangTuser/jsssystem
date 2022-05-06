@@ -91,7 +91,7 @@
                                     <option value="">-- Pilih Group --</option>
                                     <?php foreach ($group as $g) : ?>
                                         <?php if ($g->name == $name) : ?>
-                                            <option value="<?= $g->id ?>" selected><?= $g->name ?></option>
+                                            <option value="<?= $groupid = $g->id ?>" selected><?= $g->name ?></option>
                                         <?php else : ?>
                                             <option value="<?= $g->id ?>"><?= $g->name ?></option>
                                         <?php endif; ?>
