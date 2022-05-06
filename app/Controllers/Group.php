@@ -5,7 +5,8 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use \Myth\Auth\Authorization\GroupModel;
 use \Myth\Auth\Models\UserModel;
-use \Myth\Auth\Password;
+// use \Myth\Auth\Password;
+use \Myth\Auth\Authorization\PermissionModel;
 
 class Group extends ResourceController
 {
@@ -16,6 +17,9 @@ class Group extends ResourceController
         $this->helpers = ['url', 'form'];
         $this->db = \Config\Database::connect();
         $this->builder = $this->db->table('users');
+        $this->permissionModel = new PermissionModel();
+        // $this->password = new Password();
+        $this->session = \Config\Services::session();
     }
     /**
      * Return an array of resource objects, themselves in array format
