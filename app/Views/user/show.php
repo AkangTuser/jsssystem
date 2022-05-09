@@ -5,7 +5,7 @@
 <div class="card">
 
     <div class="mt-2 mb-2 mb-lg-4 mt-lg-4 mx-3">
-        <?php if (!in_groups('guests')) : ?>
+        <?php if (!in_groups('karyawan')) : ?>
             <button onclick=window.location="/pimpinan" class="btn btn-danger btn-sm"><i class="fa fa-backward"> kembali</i></button>
         <?php elseif (in_groups('karyawan')) : ?>
             <button onclick=window.location="/user" class="btn btn-danger btn-sm"><i class="fa fa-backward"> kembali</i></button>
