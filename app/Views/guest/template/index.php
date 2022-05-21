@@ -33,6 +33,9 @@
           <a class="nav-link" href="<?= site_url(); ?>">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
+          <a class="nav-link" href="<?= site_url(); ?>home/karyawan">Karyawan <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
           <a class="nav-link" href="<?= site_url(); ?>home/contact">Contact <span class="sr-only">(current)</span></a>
         </li>
       </ul>

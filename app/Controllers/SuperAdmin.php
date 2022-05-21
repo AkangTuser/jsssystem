@@ -46,7 +46,7 @@ class SuperAdmin extends ResourceController
         $pengunjung = $this->db->query("SELECT * FROM visitor WHERE date='" . $date . "'")->getResultArray();
         $pengunjung_hari_ini = count($pengunjung);
 
-        $dbpengunjung = $this->db->query("SELECT COUNT(hits) as hits FROM visitor")->getRow(); // Hitung jumlah pengunjung
+        $dbpengunjung = $this->db->query("SELECT COUNT(hits) as hits FROM visitor")->getResultArray(); // Hitung jumlah pengunjung
 
         $totalpengunjung = isset($dbpengunjung->hits) ? ($dbpengunjung->hits) : 0; // hitung total pengunjung
 
