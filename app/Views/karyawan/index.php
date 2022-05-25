@@ -84,7 +84,7 @@
                         <tr>
                             <td><?= $nomor++; ?></td>
                             <td>
-                                <button type="button" class="btn btn-outline-light btn-sm" onclick="window.location='/karyawan/detail/<?= $r['id_karyawan']; ?>'">
+                                <button type="button" class="btn btn-outline-light btn-sm" onclick="window.location='/pimpinan/<?= $r['id_karyawan']; ?>/show'">
                                     <?php if ($r['foto'] == null) : ?>
                                         <img src="<?= base_url('assets/img/default.png') ?>" alt="Foto Karyawan" width="50" height="50">
                                     <?php else : ?>
